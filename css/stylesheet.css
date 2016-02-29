@@ -17,3 +17,11 @@
 	font-weight:bold;
 	font-size:20px;
 }
+body{
+	background-image: url("../img/anotherOne.jpg");
+	background-repeat: no-repeat;
+	-moz-background-size: cover;
+	-webkit-background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}

@@ -4,6 +4,12 @@ $(function(){
 	$("#inspirational-quote").text(quotes[currentQuote]);
 });
 
+window.addEventListener("beforeunload", function (e) {
+  var confirmationMessage = "You've played yourself";
+  (e || window.event).returnValue = confirmationMessage; //Gecko + IE
+  return confirmationMessage;                            //Webkit, Safari, Chrome
+});
+
 
 
 $(function() {
@@ -14,7 +20,12 @@ $(function() {
 			newQuote = Math.floor(Math.random()*quotes.length);
 		}while(currentQuote == newQuote)
 		currentQuote = newQuote;
-		$("#inspirational-quote").text(quotes[currentQuote]);
+
+		$("#inspirational-quote").fadeOut(function(){
+			$(this).text(quotes[currentQuote]);
+			$(this).fadeIn();
+		})
+
 	
 	});
 });
