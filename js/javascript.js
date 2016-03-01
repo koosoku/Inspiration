@@ -6,6 +6,7 @@ var quotes = [
 	{quote:"Put this money in your savings account. Buy your mama a house, buy your whole family houses.", sound:"sounds/mamaHouse.mp3"},
 	{quote:"You smart, You very smart. We the best. You a genius. I appreciate you. You loyal.", sound:"sounds/youSmart.mp3"}
 	];
+
 var currentQuote = 0;
 $(function(){
 	$("#inspirational-quote").text(quotes[currentQuote].quote);
@@ -17,8 +18,6 @@ window.addEventListener("beforeunload", function (e) {
   return confirmationMessage;                            //Webkit, Safari, Chrome
 });
 
-
-
 $(function() {
 	$("#more-inspiration-button").click(function(){
 		console.log("clicked");
@@ -27,6 +26,7 @@ $(function() {
 			newQuote = Math.floor(Math.random()*quotes.length);
 		}while(currentQuote == newQuote)
 		currentQuote = newQuote;
+		// audio.stop();
 		var audio = new Audio(quotes[currentQuote].sound);
 		audio.play();
 
@@ -34,7 +34,5 @@ $(function() {
 			$(this).text(quotes[currentQuote].quote);
 			$(this).fadeIn();
 		})
-
-	
 	});
 });

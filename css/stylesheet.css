@@ -6,6 +6,7 @@
 	transform: translate(-50%);
 	text-align: center;
 }
+
 #inspirational-quote{
 	position:relative;
 	top:10px;
@@ -13,10 +14,12 @@
 	color:#fff;
 	background-color:#000;
 }
+
 #more-inspiration-button{
 	font-weight:bold;
 	font-size:20px;
 }
+
 body{
 	background-image: url("../img/anotherOne.jpg");
 	background-repeat: no-repeat;
